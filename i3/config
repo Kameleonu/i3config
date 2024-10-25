@@ -40,13 +40,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xset -dpms
 
 # Set xrandr to 144hz
-exec --no-startup-id xrandr --output DP-0 --mode 2560x1080 --rate 144.00
+# exec --no-startup-id xrandr --output DP-0 --mode 2560x1080 --rate 144.00
 
 # Set wallpaper
 exec_always --no-startup-id feh --bg-fill ~/Downloads/fsociety_wallpaper.png
 
 # Transparency with picom compositor
-exec_always picom -f
+exec_always --no-startup-id picom -f
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -64,7 +64,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec --no-startup-id terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
